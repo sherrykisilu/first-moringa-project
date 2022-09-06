@@ -4,13 +4,15 @@ body{
     align-items: center;
     height: 100vh;
     margin:0 ;
-    background: #222;
+    background:rgb(45, 6, 88);
     font-family: '';
     background-image: "";
     font-size: 120%;
+    color: whitesmoke;
+    background-image: url(https://media.istockphoto.com/photos/night-sky-with-stars-and-clouds-picture-id532378051?k=20&m=532378051&s=612x612&w=0&h=0-UTSrh2zEIDCdfolBJIUvBOtkgbOHrfJuvef_RemZA=);
 }
 .card {
-    background: #eaeaea;
+    background:rgb(5, 10, 58);
     padding: 2em;
     border-radius: 30px;
     width: 100%;
@@ -43,7 +45,7 @@ input.search-bar{
     font-size: 120%;
     width: calc(100%-100px);
 }
-h1.temp{
+h1{
 margin: 0;
 margin-bottom: 0.4;
 }
@@ -51,23 +53,13 @@ margin-bottom: 0.4;
     text-transform:capitalize ;
     margin-left: 8px;
 }
-.flex{
-display: flex;
-align-items: center;
-}
 h2{
-    color: black;
+    color:whitesmoke;
 }
-.weather.loading{
+.weather{
     visibility: hidden;
     max-height: 20px;
     position: relative;
 }
-/* .weather.loading:after{
-    visibility: visible;
-    content: "Loading...";
-    color: white;
-    position: absolute;
-    top:0;
-    left: 20p;
-} */
+
+
