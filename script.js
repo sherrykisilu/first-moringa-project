@@ -1,4 +1,10 @@
 const searchButton=document.getElementById("searchButton")
+const place=document.getElementById("cityWeather")
+const description=document.getElementById("description")
+const humidity=document.getElementById("humidity")
+const wind=document.getElementById("wind")
+const temperature=document.getElementById("temp")
+
 
 
 
@@ -9,31 +15,19 @@ document.addEventListener("DOMContentLoaded",function(){
         const apiKey="06d12ce8edb650299e20a27648cccec7";
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
         .then((response)=>response.json())
-        .then((data)=>console.log(data))
+        .then((data)=>displayWeather(data))
     })
 });
 
+function  displayWeather(data){
+    console.log(data)
+place.textContent=` Weather in ${data.name}`
+description.textContent=data.weather[0].description;
+humidity.textContent=data.main.humidity;
+wind.textContent=data.wind.speed;
+temperature.textContent= data.main.temp;
+} 
 
-    
-    
-// function  displayWeather(data){
-//     const{name}=data;
-//     const {icon,description}=data.weather[0];
-//     const{temp,humidity}=data.main;
-//     const{speed}=data.wind;
-//     console.log(name,icon,description,temp,humidity,speed)
-//     document.querySelector(".city").innerText="Weather in "+name;
-//     document.querySelector(".icon").src="https://openweathermap.org/img/wn/" + icon +"01n@2x.png"
-//     document.querySelector(".description").innerText=description;
-//     document.querySelector(".temp").innerText=temp+"°C";
-//     document.querySelector(".humidity").innerText=`Humidity:${humidity}%`;
-//     document.querySelector(".wind").innerText="wind speed:"+speed+"km/hr";
-//     document.querySelector(".weather").classList.remove("loading");
-//     document.body.style.backgroundImage="url('https:source.unsplash.com/1600*900/?"+name+"')"
-// }
-// function search(){
-//     document.querySelector(".search-bar").value;
-// }
 // document.querySelector(".search button").addEventListener("click",function(){
 //     weather.search();
 // })
